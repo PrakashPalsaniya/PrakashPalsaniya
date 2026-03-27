@@ -6,20 +6,19 @@
 </p>
 
 <div align="center">
+    <img src="https://streak-stats.demolab.com?user=PrakashPalsaniya&theme=dracula&hide_border=false" height="150" alt="streak stats" />
+
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=PrakashPalsaniya&theme=dracula" height="150" alt="stats" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=PrakashPalsaniya&theme=dracula" height="150" alt="top language by commits" />
-  <img src="https://streak-stats.demolab.com?user=PrakashPalsaniya&theme=dracula&hide_border=false" height="150" alt="streak stats" />
 </div>
 
 <div align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=PrakashPalsaniya&theme=dracula" alt="profile details" />
 </div>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/output/pacman-contribution-graph.svg">
-</picture>
+
+
+
 
 ---
 
@@ -71,33 +70,6 @@
 
 ---
 
-## 🚀 Featured Projects
-
-### 🛒 MarketNest
-A full-stack grocery e-commerce platform with customer and seller flows, authentication, cart, orders, coupons, and payments.
-
-**Tech:** React, Vite, Node.js, Express, MongoDB, JWT, Stripe
-
-### 🔗 URL Shortener
-A URL shortening platform with redirect handling, analytics ideas, and backend-focused architecture improvements.
-
-**Tech:** React, Node.js, Express, MongoDB
-
-### 🎬 Movie / OTT Projects
-Frontend-heavy projects focused on clean UI, streaming-style layouts, and interactive user experiences.
-
-**Tech:** React, Next.js, JavaScript, CSS
-
----
-
-## 📚 What I’m Working On
-
-- Improving my **backend development** skills
-- Learning **Git & GitHub** more deeply
-- Building stronger **resume-level full stack projects**
-- Practicing **DSA and core CS subjects**
-
----
 
 ## 📈 Profile Visitors
 
