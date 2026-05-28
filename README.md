@@ -184,30 +184,6 @@ Check out my repositories for more projects including:
 
 ---
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=PrakashPalsaniya&theme=dracula&no-frame=true&no-bg=true&column=7&margin-w=10" alt="trophies" />
-</div>
-
----
-
-## 🤝 Connect With Me
-
-<div align="center">
-  <a href="https://github.com/PrakashPalsaniya" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <a href="https://linkedin.com/in/prakashpalsaniya" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="mailto:prakashpalsaniya@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-  </a>
-</div>
-
----
-
 ## 📈 Profile Visitors
 
 <div align="center">
