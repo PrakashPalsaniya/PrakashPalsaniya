@@ -99,16 +99,17 @@ A production-grade URL shortening service built on microservices architecture wi
 <td width="50%">
 
 ### 🎬 Screenly
-**Full Stack Streaming Platform**
+**Movie Ticket Booking Platform**
 
-A feature-rich full-stack web application with a modern frontend and robust backend, containerized with Docker for seamless deployment.
+A full-stack movie ticket booking website where users can browse movies, select showtimes, pick seats, and book tickets — all with a seamless and modern UI.
 
 **Key Features:**
-- 🎨 Modern & Responsive UI
-- 🔧 RESTful API Backend
+- 🎥 Browse Movies & Showtimes
+- 💺 Interactive Seat Selection
+- 🎟️ Ticket Booking & Confirmation
+- 🔐 User Authentication
 - 🐳 Docker Containerization
-- 🔐 Secure Authentication
-- 📱 Mobile-Friendly Design
+- 📱 Responsive Design
 
 **Tech:** `React` `Node.js` `Express` `MongoDB` `Docker`
 
@@ -122,18 +123,19 @@ A feature-rich full-stack web application with a modern frontend and robust back
 <td width="50%">
 
 ### 💰 FinMate
-**Personal Finance Manager**
+**Personal Finance Manager + Telegram Bot**
 
-A sleek personal finance management application built with React and Vite, designed to help users track expenses, manage budgets, and gain financial insights.
+A smart personal finance management app with **Telegram Bot integration** — track expenses directly from Telegram chats and have them automatically synced to the web dashboard.
 
 **Key Features:**
-- 📊 Expense Tracking & Visualization
-- 💳 Budget Management
+- 🤖 Telegram Bot for Expense Logging
+- 💬 Chat-Based Transaction Input
+- 📊 Auto-Sync to Web Dashboard
+- 💳 Expense Tracking & Visualization
 - 📈 Financial Insights & Reports
 - ⚡ Lightning-Fast with Vite
-- 🎨 Clean & Intuitive UI
 
-**Tech:** `React` `Vite` `JavaScript` `CSS`
+**Tech:** `React` `Vite` `Node.js` `Telegram Bot API` `MongoDB`
 
 <a href="https://github.com/PrakashPalsaniya/FinMate">
   <img src="https://img.shields.io/badge/View_Repo-100000?style=for-the-badge&logo=github&logoColor=white" alt="View Repo" />
