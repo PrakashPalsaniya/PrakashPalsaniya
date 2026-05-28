@@ -29,6 +29,7 @@
 - 🌱 Currently learning more about **system design**, **scalable APIs**, and **modern web development**
 - 🧠 Regularly practicing **DSA in C++**
 - 🚀 Building projects with **React, Node.js, Express, MongoDB**, and related tools
+- 💡 I love exploring new technologies and building cool stuff!
 
 ---
 
