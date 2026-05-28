@@ -91,7 +91,7 @@ A production-grade URL shortening service built on microservices architecture wi
 
 **Tech:** `Node.js` `Express` `MongoDB` `Redis` `RabbitMQ` `Docker`
 
-<a href="https://github.com/PrakashPalsaniya/PKLinks">
+<a href="https://github.com/PrakashPalsaniya/PKLinks-private-micro123">
   <img src="https://img.shields.io/badge/View_Repo-100000?style=for-the-badge&logo=github&logoColor=white" alt="View Repo" />
 </a>
 
