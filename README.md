@@ -13,7 +13,8 @@
 <!-- ━━━━━━━━━━━━━━━━━━━━ GITHUB STATS ━━━━━━━━━━━━━━━━━━━━ -->
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=PrakashPalsaniya&theme=dracula&hide_border=true&border_radius=10" height="160" alt="streak stats" />
+  <img src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/contributions-badge.svg" height="160" alt="total contributions" />
+  <img src="https://streak-stats.demolab.com?user=PrakashPalsaniya&theme=dracula&hide_border=true&border_radius=10&hide_total_contributions=true" height="160" alt="streak stats" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=PrakashPalsaniya&theme=dracula" height="160" alt="stats" />
 </div>
 
