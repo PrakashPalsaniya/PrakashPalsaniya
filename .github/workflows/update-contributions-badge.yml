@@ -1,0 +1,46 @@
+name: Update Total Contributions Badge
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compute lifetime total contributions
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          USERNAME="PrakashPalsaniya"
+          START_YEAR=2023
+          CURRENT_YEAR=$(date +%Y)
+          TOTAL=0
+
+          for YEAR in $(seq $START_YEAR $CURRENT_YEAR); do
+            FROM="${YEAR}-01-01T00:00:00Z"
+            TO="${YEAR}-12-31T23:59:59Z"
+            QUERY=$(jq -n --arg u "$USERNAME" --arg f "$FROM" --arg t "$TO" \
+              '{query:"query($userName:String!,$from:DateTime!,$to:DateTime!){user(login:$userName){contributionsCollection(from:$from,to:$to){contributionCalendar{totalContributions}}}}",variables:{userName:$u,from:$f,to:$t}}')
+
+            YEAR_TOTAL=$(curl -s -H "Authorization: bearer $GH_TOKEN" -H "Content-Type: application/json" \
+              -d "$QUERY" https://api.github.com/graphql \
+              | jq '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+
+            TOTAL=$((TOTAL + YEAR_TOTAL))
+          done
+
+          echo "{\"schemaVersion\":1,\"label\":\"Total Contributions\",\"message\":\"$TOTAL\",\"color\":\"blueviolet\"}" > contributions-badge.json
+
+      - name: Commit badge file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add contributions-badge.json
+          git diff --staged --quiet || git commit -m "chore: update total contributions badge"
+          git push
