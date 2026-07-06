@@ -35,12 +35,24 @@ jobs:
             TOTAL=$((TOTAL + YEAR_TOTAL))
           done
 
-          echo "{\"schemaVersion\":1,\"label\":\"Total Contributions\",\"message\":\"$TOTAL\",\"color\":\"blueviolet\"}" > contributions-badge.json
+          echo "TOTAL=$TOTAL" >> $GITHUB_ENV
+
+      - name: Generate matching-theme SVG card
+        run: |
+          cat > contributions-badge.svg << EOF
+          <svg width="600" height="170" viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="170" rx="10" ry="10" fill="#282a36" stroke="#43436a" stroke-width="1"/>
+            <text x="300" y="82" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="52" font-weight="700" fill="#ff79c6" text-anchor="middle">${TOTAL}</text>
+            <text x="300" y="115" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="19" fill="#ff79c6" text-anchor="middle">Total Contributions</text>
+            <text x="300" y="142" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" fill="#f8f8f2" text-anchor="middle">Nov 6, 2023 - Present</text>
+          </svg>
+          EOF
 
       - name: Commit badge file
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add contributions-badge.json
-          git diff --staged --quiet || git commit -m "chore: update total contributions badge"
+          git add contributions-badge.svg
+          git rm -f contributions-badge.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "chore: update total contributions card"
           git push
