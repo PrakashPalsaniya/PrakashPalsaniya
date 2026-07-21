@@ -1,6 +1,6 @@
 <svg width="400" height="160" viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg">
   <rect width="600" height="170" rx="10" ry="10" fill="#282a36" stroke="#43436a" stroke-width="1"/>
-  <text x="300" y="82" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="52" font-weight="700" fill="#ff79c6" text-anchor="middle">570</text>
+  <text x="300" y="82" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="52" font-weight="700" fill="#ff79c6" text-anchor="middle">573</text>
   <text x="300" y="115" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="19" fill="#ff79c6" text-anchor="middle">Total Contributions</text>
   <text x="300" y="142" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" fill="#f8f8f2" text-anchor="middle">Nov 6, 2023 - Present</text>
 </svg>
