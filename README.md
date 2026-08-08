@@ -145,6 +145,31 @@ A smart personal finance management app with **Telegram Bot integration** — tr
 </td>
 <td width="50%">
 
+### 📄 DocuMind
+**Agentic RAG Document Intelligence**
+
+An AI document assistant that answers questions from your uploaded PDFs with **source citations** — built on an agentic RAG pipeline with hybrid retrieval and semantic caching.
+
+**Key Features:**
+- 🧠 Agentic RAG with LangGraph
+- 🔍 Hybrid Search (BM25 + Semantic)
+- 🎯 Cross-Encoder Reranking
+- ⚡ Semantic Caching for Repeat Queries
+- 📐 LLM-as-Judge Evaluation Harness
+- 📎 Answers with Source Citations
+- 👷 BullMQ Background Ingestion
+
+**Tech:** `LangChain` `LangGraph` `Qdrant` `PostgreSQL` `Redis` `BullMQ` `Docker`
+
+<a href="https://github.com/PrakashPalsaniya/Docu-Mind">
+  <img src="https://img.shields.io/badge/View_Repo-100000?style=for-the-badge&logo=github&logoColor=white" alt="View Repo" />
+</a>
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
 ### 🔍 More Projects...
 
 Check out my repositories for more projects including:
@@ -156,6 +181,9 @@ Check out my repositories for more projects including:
 <a href="https://github.com/PrakashPalsaniya?tab=repositories">
   <img src="https://img.shields.io/badge/View_All_Repos-100000?style=for-the-badge&logo=github&logoColor=white" alt="View All" />
 </a>
+
+</td>
+<td width="50%">
 
 </td>
 </tr>
