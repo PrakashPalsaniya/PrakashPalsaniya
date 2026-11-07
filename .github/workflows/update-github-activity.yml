@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install font tools
+        run: python -m pip install fonttools==4.61.1
+
       - name: Refresh activity cards
         env:
           GH_TOKEN: ${{ github.token }}
