@@ -11,8 +11,6 @@ import re
 import time
 from urllib.request import Request, urlopen
 
-from svg_typography import outline_svg
-
 USERNAME = "PrakashPalsaniya"
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -88,7 +86,7 @@ def collect():
 
 
 def text(x, y, value, size, color, weight=400, mono=False, extra=""):
-    font = "IBM Plex Mono,monospace" if mono or re.fullmatch(r"[\d,]+", str(value)) else "Sora,sans-serif" if size >= 40 else "Inter,sans-serif"
+    font = "Consolas,monospace" if mono else "Arial,Helvetica,sans-serif"
     return f'<text x="{x}" y="{y}" font-family="{font}" font-size="{size}" fill="{color}" font-weight="{weight}" {extra}>{escape(str(value))}</text>'
 
 
@@ -177,7 +175,7 @@ def write_cards(data):
     for dark in [False, True]:
         for mobile in [False, True]:
             name = "github-activity" + ("-dark" if dark else "-light") + ("-mobile" if mobile else "") + ".svg"
-            cards[name] = outline_svg(render(data, dark, mobile))
+            cards[name] = render(data, dark, mobile)
     for name, content in cards.items():
         (ROOT / "assets" / name).write_text(content, encoding="utf-8")
 
