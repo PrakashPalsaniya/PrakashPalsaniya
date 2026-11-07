@@ -95,9 +95,27 @@ def box(x, y, width, height, fill, radius=12, stroke=None):
     return f'<rect x="{x}" y="{y}" width="{width}" height="{height}" rx="{radius}" fill="{fill}"{border}/>'
 
 
+def card_palette(dark, index):
+    themes = [
+        (
+            dict(panel="#eaf2ff", bg="#dce9fc", ink="#142e5c", muted="#415e88", line="#b8d0f5", accent="#2459df"),
+            dict(panel="#142b4a", bg="#1b375b", ink="#eff6ff", muted="#b3ccef", line="#345b88", accent="#83b5ff"),
+        ),
+        (
+            dict(panel="#f3ecff", bg="#e9ddfa", ink="#3c225d", muted="#68517f", line="#d7c0f0", accent="#7135b5"),
+            dict(panel="#2c1d41", bg="#3b2854", ink="#fbf3ff", muted="#d3bce8", line="#62477d", accent="#cfabff"),
+        ),
+        (
+            dict(panel="#eafaf2", bg="#d4f2e3", ink="#0b4030", muted="#3c6958", line="#afdcc7", accent="#08764f"),
+            dict(panel="#0e3028", bg="#174337", ink="#edfff6", muted="#b4ddca", line="#2e6652", accent="#73edb5"),
+        ),
+    ]
+    return themes[index][int(dark)]
+
+
 def render(data, dark, mobile):
     p = dict(bg="#111827" if dark else "#f4f6fb", panel="#18243a" if dark else "#ffffff", ink="#f4f6ff" if dark else "#14213d", muted="#a5b3cc" if dark else "#56647e", line="#30405b" if dark else "#d4ddeb", accent="#729aff" if dark else "#285bff")
-    colors = [p["accent"], "#ff916d" if dark else "#c84b28", "#49d7b1" if dark else "#007b65", "#b49aff" if dark else "#7143d3"]
+    colors = ["#c4b5fd", "#dfb7ff", "#ad8aff", "#9575db"] if dark else ["#6d28d9", "#a855f7", "#8b5cf6", "#b56bd1"]
     today = date.fromisoformat(data["updated"])
     days = data["days"]
     lifetime = sum(days.values())
@@ -110,9 +128,10 @@ def render(data, dark, mobile):
     body += text(width - 28, 38, "UPDATED " + today.strftime("%d %b %Y").upper(), 11, p["muted"], mono=True, extra='text-anchor="end"')
 
     for index, label in enumerate(["CONTRIBUTIONS", "PRIMARY LANGUAGES", "RECENT ACTIVITY"]):
+        p = card_palette(dark, index)
         x, y = (24, 62 + index * 292) if mobile else (24 + index * 392, 62)
         body += box(x, y, card_width, 268, p["panel"], 12, p["line"])
-        body += text(x + 22, y + 31, f"0{index + 1} / {label}", 12, p["muted"], 600, True)
+        body += text(x + 22, y + 31, f"0{index + 1} / {label}", 12, p["accent"], 600, True)
         if index == 0:
             body += text(x + 22, y + 119, f"{lifetime:,}", 76 if mobile else 68, p["accent"], 700)
             body += text(x + 24, y + 152, "contributions since Nov 2023", 17, p["muted"])
@@ -139,10 +158,11 @@ def render(data, dark, mobile):
                 if day < start or day > today:
                     continue
                 count = days.get(str(day), 0)
-                color = p["line"] if not count else ["#adc2ff", "#729aff", "#426fff", "#285bff"][min(3, (count - 1) // 3)]
+                heatmap = ["#1a6752", "#208b67", "#2ecc8f", "#73edb5"] if dark else ["#87d5ad", "#54b98a", "#229e6b", "#08764f"]
+                color = p["line"] if not count else heatmap[min(3, (count - 1) // 3)]
                 cell_body = box(x + 22 + (offset // 7) * (cell + gap), y + 62 + (offset % 7) * (cell + gap), cell, cell, color, 3)
                 body += f'<g><title>{day}: {count} contributions</title>{cell_body}</g>'
-            body += text(x + 22, y + 232, f"{recent:,}", 25, p["ink"], 700)
+            body += text(x + 22, y + 232, f"{recent:,}", 25, p["accent"], 700)
             body += text(x + card_width - 22, y + 231, "LAST 90 DAYS", 11, p["muted"], mono=True, extra='text-anchor="end"')
 
     desc = f"{lifetime} GitHub contributions since November 2023; {annual} in the past 365 days. Primary languages across public nonfork repositories: " + ", ".join(f"{name}: {count}" for name, count in sorted(data["languages"].items())) + f". {recent} contributions in the past 90 days. Updated {today}."
