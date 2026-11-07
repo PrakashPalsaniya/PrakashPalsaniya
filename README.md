@@ -1,216 +1,60 @@
-<div align="center">
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=220&color=gradient&customColorList=18,19,21&section=header&text=Prakash%20Palsaniya&fontSize=46&fontColor=fff&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20B.Tech%20IT%20%40%20NIT%20Srinagar%20%7C%20Problem%20Solver&descSize=18&descAlignY=55" />
-</div>
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/profile-header-dark-mobile.svg">
+  <source media="(max-width: 600px)" srcset="./assets/profile-header-light-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-header-dark.svg">
+  <img src="./assets/profile-header-light.svg" width="100%" alt="Prakash Palsaniya: backend development and applied AI, NIT Srinagar, class of 2027">
+</picture>
 
-<p align="center">
-  <a href="https://github.com/PrakashPalsaniya">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=BD93F9&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=100&lines=%F0%9F%9A%80+Building+Scalable+Web+Applications;%F0%9F%A7%A0+Solving+DSA+Problems+in+C%2B%2B;%E2%9A%99%EF%B8%8F+Exploring+Microservices+%26+System+Design" alt="Typing SVG" />
-  </a>
+<p>
+  <a href="https://prakash-palsaniya.vercel.app/">Portfolio &#8599;</a>&nbsp; &middot; &nbsp;
+  <a href="https://www.linkedin.com/in/prakash-palsaniya">LinkedIn &#8599;</a>&nbsp; &middot; &nbsp;
+  <a href="mailto:prakash8290682001@gmail.com">Email &#8599;</a>&nbsp; &middot; &nbsp;
+  <a href="https://prakash-palsaniya.vercel.app/Prakash-Palsaniya-Resume.pdf">Resume &#8599;</a>
 </p>
 
-<br/>
+I'm an IT student at NIT Srinagar, graduating in 2027. I build backend APIs and applications with LLMs. Lately, that's meant working on PDF retrieval, live seat reservations, and background workers.
 
-<!-- ━━━━━━━━━━━━━━━━━━━━ GITHUB STATS ━━━━━━━━━━━━━━━━━━━━ -->
+## Selected work
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/contributions-badge.svg" height="165" alt="total contributions" />
-  <img src="https://streak-stats.demolab.com?user=PrakashPalsaniya&theme=dracula&hide_border=true&border_radius=10&hide_total_contributions=true" height="165" alt="streak stats" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=PrakashPalsaniya&theme=dracula" height="165" alt="stats" />
-</div>
+### DocuMind &nbsp; / &nbsp; [Live](https://docu-mind-alpha-topaz.vercel.app/) &middot; [Code](https://github.com/PrakashPalsaniya/Docu-Mind)
 
-<br/>
+Ask questions about PDFs and get answers with source citations. I built the retrieval pipeline with LangGraph, combined vector search with BM25 and reranking, and moved document processing into background workers.
 
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=PrakashPalsaniya&theme=dracula" height="165" alt="top language by commits" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=PrakashPalsaniya&theme=dracula" height="165" alt="repos per language" />
-</div>
+<sub>LangGraph &middot; Qdrant &middot; BullMQ &middot; Redis &middot; PostgreSQL &middot; AWS S3</sub>
 
-<br/>
+### Screenly &nbsp; / &nbsp; [Live](https://screenly-beta.vercel.app/)
 
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=PrakashPalsaniya&theme=dracula" width="90%" alt="profile details" />
-</div>
+Movie tickets with live seat selection and Razorpay checkout. Redis holds seats while users check out; MongoDB transactions protect the booking, and RabbitMQ handles confirmation emails.
 
-<br/>
+<sub>Node.js &middot; Socket.IO &middot; MongoDB &middot; Redis &middot; RabbitMQ &middot; Razorpay &middot; AWS</sub>
 
----
+### FinMate &nbsp; / &nbsp; [Live](https://fin-mate-zeta.vercel.app/) &middot; [Code](https://github.com/PrakashPalsaniya/FinMate)
 
-<h2 align="center">
-  <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="35" style="vertical-align: middle;"> About Me
-</h2>
+An expense tracker with chat-based entry and a Telegram bot. I added a Gemini assistant for questions about spending, Redis caching for reports, and Excel exports.
 
-```yaml
-name: Prakash Palsaniya
-education: B.Tech in Information Technology @ NIT Srinagar (CGPA: 8.4)
-location: India 🇮🇳
+<sub>React &middot; Node.js &middot; MongoDB &middot; Redis &middot; Gemini &middot; Telegram</sub>
 
-currently_working_on:
-  - DocuMind (Agentic RAG Document Intelligence)
-  - Distributed Microservices Architectures
-  - Shipping AI-Native Features in Web Apps
+### PKLinks &nbsp; / &nbsp; [Live](https://pklinks-frontend.vercel.app/) &middot; [Code](https://github.com/PrakashPalsaniya/Pklinks-micro-services)
 
-core_stack:
-  - Node.js, Express, Redis, RabbitMQ
-  - MongoDB, PostgreSQL, Qdrant (Vector DB)
-  - LangChain, LangGraph, Python, React
+A URL shortener I built to work through microservices. Redirects use a Redis cache; click events go through RabbitMQ to a separate analytics worker.
 
-interests:
-  - System Design & Scalability
-  - Data Structures & Algorithms (500+ solved 🎯)
-  - Open Source & Cloud Computing
-```
+<sub>Node.js &middot; Express &middot; MongoDB &middot; Redis &middot; RabbitMQ &middot; Docker</sub>
+
+## Stack
+
+- **Backend:** Node.js, Express, Python, Socket.IO
+- **Data & queues:** PostgreSQL, MongoDB, Redis, RabbitMQ, BullMQ
+- **AI & retrieval:** LangChain, LangGraph, Qdrant, LLM APIs
+- **Frontend & deployment:** React, Tailwind CSS, Docker, AWS
+
+I also solve DSA problems in C++ and study system design.
+
+<details>
+  <summary>GitHub activity</summary>
+  <br>
+  <img src="./contributions-badge.svg" width="400" alt="Total GitHub contributions, updated by this repository's workflow">
+</details>
 
 ---
 
-<h2 align="center">🚀 Featured Projects</h2>
-
-<div align="center">
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🔗 PKLinks — URL Shortener
-> **Microservices-based URL Shortener**
-
-A production-grade URL shortening service built on microservices architecture with real-time analytics, authentication, and high-performance caching.
-
-**Key Features:**
-- 🏗️ Microservices Architecture
-- 📊 Real-time Click Analytics
-- 🔐 User Authentication & Authorization
-- ⚡ Redis Caching Layer
-- 🐇 RabbitMQ Message Queue
-- 👷 Async Analytics Workers
-- 📈 Detailed Link Statistics
-
-**Tech:** `Node.js` `Express` `MongoDB` `Redis` `RabbitMQ` `Docker`
-
-<br/>
-<a href="https://github.com/PrakashPalsaniya/PKLinks-private-micro123">
-  <img src="https://img.shields.io/badge/View_Repo-BD93F9?style=for-the-badge&logo=github&logoColor=white" alt="View Repo" />
-</a>
-
-</td>
-<td width="50%" valign="top">
-
-### 🎬 Screenly
-> **Movie Ticket Booking Platform**
-
-A full-stack movie ticket booking website where users can browse movies, select showtimes, pick seats, and book tickets — all with a seamless and modern UI.
-
-**Key Features:**
-- 🎥 Browse Movies & Showtimes
-- 💺 Interactive Seat Selection
-- 🎟️ Ticket Booking & Confirmation
-- 🔐 User Authentication
-- 🐳 Docker Containerization
-- 📱 Responsive Design
-
-**Tech:** `React` `Node.js` `Express` `MongoDB` `Docker`
-
-<br/>
-<a href="https://github.com/PrakashPalsaniya/Screenly">
-  <img src="https://img.shields.io/badge/View_Repo-BD93F9?style=for-the-badge&logo=github&logoColor=white" alt="View Repo" />
-</a>
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 💰 FinMate
-> **Personal Finance Manager + Telegram Bot**
-
-A smart personal finance management app with **Telegram Bot integration** — track expenses directly from Telegram chats and have them automatically synced to the web dashboard.
-
-**Key Features:**
-- 🤖 Telegram Bot for Expense Logging
-- 💬 Chat-Based Transaction Input
-- 📊 Auto-Sync to Web Dashboard
-- 💳 Expense Tracking & Visualization
-- 📈 Financial Insights & Reports
-- ⚡ Lightning-Fast with Vite
-
-**Tech:** `React` `Vite` `Node.js` `Telegram Bot API` `MongoDB`
-
-<br/>
-<a href="https://github.com/PrakashPalsaniya/FinMate">
-  <img src="https://img.shields.io/badge/View_Repo-BD93F9?style=for-the-badge&logo=github&logoColor=white" alt="View Repo" />
-</a>
-
-</td>
-<td width="50%" valign="top">
-
-### 📄 DocuMind
-> **Agentic RAG Document Intelligence**
-
-An AI document assistant that answers questions from your uploaded PDFs with **source citations** — built on an agentic RAG pipeline with hybrid retrieval and semantic caching.
-
-**Key Features:**
-- 🧠 Agentic RAG with LangGraph
-- 🔍 Hybrid Search (BM25 + Semantic)
-- 🎯 Cross-Encoder Reranking
-- ⚡ Semantic Caching for Repeat Queries
-- 📐 LLM-as-Judge Evaluation Harness
-- 📎 Answers with Source Citations
-- 👷 BullMQ Background Ingestion
-
-**Tech:** `LangChain` `LangGraph` `Qdrant` `PostgreSQL` `Redis` `BullMQ` `Docker`
-
-<br/>
-<a href="https://github.com/PrakashPalsaniya/Docu-Mind">
-  <img src="https://img.shields.io/badge/View_Repo-BD93F9?style=for-the-badge&logo=github&logoColor=white" alt="View Repo" />
-</a>
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🔍 More Projects...
-
-Check out my repositories for more projects including:
-
-- 🧠 **DSA Solutions** — C++ problem solving
-- 🌐 **Web Apps** — Full stack applications
-- 🛠️ **Tools & Utilities** — Developer tools
-
-<br/>
-<a href="https://github.com/PrakashPalsaniya?tab=repositories">
-  <img src="https://img.shields.io/badge/View_All_Repos-282A36?style=for-the-badge&logo=github&logoColor=white" alt="View All" />
-</a>
-
-</td>
-<td width="50%" valign="top">
-
-</td>
-</tr>
-</table>
-
-</div>
-
----
-
-<h2 align="center">🛠️ Tech Stack</h2>
-
-<div align="center">
-
-**🌐 Frontend** <br/>
-<img src="https://skillicons.dev/icons?i=react,nextjs,html,css,tailwind,js" alt="frontend" />
-<br/><br/>
-
-**⚙️ Backend** <br/>
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,redis,rabbitmq,firebase" alt="backend" />
-<br/><br/>
-
-**🧰 DevOps & Tools** <br/>
-<img src="https://skillicons.dev/icons?i=docker,git,github,vscode,postman,linux" alt="tools" />
-<br/><br/>
-
-**💻 Languages** <br/>
-<img src="https://skillicons.dev/icons?i=cpp,js,python" alt="languages" />
-
-</div>
-
----
+Open to backend and applied AI opportunities. [Get in touch](mailto:prakash8290682001@gmail.com).

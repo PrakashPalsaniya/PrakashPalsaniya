@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="246" viewBox="0 0 680 246" role="img" aria-labelledby="title description">
+  <title id="title">Prakash Palsaniya</title>
+  <desc id="description">Backend development and applied AI. Information Technology at NIT Srinagar, graduating in 2027.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#dbe5d7" stroke-width="0.5"/></pattern>
+    <clipPath id="corners"><rect width="680" height="246" rx="12"/></clipPath>
+  </defs>
+  <rect width="680" height="246" rx="12" fill="#f5f8f3"/>
+  <rect x="240" width="440" height="246" fill="url(#grid)" opacity="0.45" clip-path="url(#corners)"/>
+  <rect x="38" y="34" width="24" height="3" rx="1.5" fill="#31562d"/>
+  <text x="74" y="40" font-family="'Courier New',monospace" font-size="12" letter-spacing="1.4" fill="#5c7164">BACKEND + APPLIED AI</text>
+  <text x="36" y="121" font-family="'Segoe UI',Arial,sans-serif" font-size="49" font-weight="700" letter-spacing="-2.1" fill="#17271d">Prakash Palsaniya<tspan fill="#31562d">.</tspan></text>
+  <text x="38" y="160" font-family="'Segoe UI',Arial,sans-serif" font-size="18" fill="#5c7164">NIT Srinagar &#183; Information Technology &#183; 2027</text>
+  <text x="38" y="210" font-family="'Courier New',monospace" font-size="13" fill="#5c7164">Node.js / Python / C++</text>
+</svg>

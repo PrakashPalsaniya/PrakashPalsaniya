@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="246" viewBox="0 0 1200 246" role="img" aria-labelledby="title description">
+  <title id="title">Prakash Palsaniya</title>
+  <desc id="description">Backend development and applied AI. Information Technology at NIT Srinagar, graduating in 2027.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#26322d" stroke-width="0.5"/></pattern>
+    <clipPath id="corners"><rect width="1200" height="246" rx="12"/></clipPath>
+  </defs>
+  <rect width="1200" height="246" rx="12" fill="#0d1117"/>
+  <rect x="760" width="440" height="246" fill="url(#grid)" opacity="0.45" clip-path="url(#corners)"/>
+  <rect x="54" y="34" width="24" height="3" rx="1.5" fill="#b8ef93"/>
+  <text x="90" y="40" font-family="'Courier New',monospace" font-size="12" letter-spacing="1.4" fill="#a4b3ac">BACKEND + APPLIED AI</text>
+  <text x="52" y="121" font-family="'Segoe UI',Arial,sans-serif" font-size="67" font-weight="700" letter-spacing="-2.1" fill="#f0f4ef">Prakash Palsaniya<tspan fill="#b8ef93">.</tspan></text>
+  <text x="54" y="160" font-family="'Segoe UI',Arial,sans-serif" font-size="19" fill="#a4b3ac">NIT Srinagar &#183; Information Technology &#183; 2027</text>
+  <text x="54" y="210" font-family="'Courier New',monospace" font-size="13" fill="#a4b3ac">Node.js / Python / C++</text>
+
+  <g fill="none" stroke="#26322d" stroke-width="1.5">
+    <path d="M900 104H930M1020 104H1050"/>
+    <path d="M855 129V184H930M1095 129V184H1020"/>
+    <rect x="810" y="79" width="90" height="50" rx="8"/>
+    <rect x="1050" y="79" width="90" height="50" rx="8"/>
+    <rect x="930" y="164" width="90" height="40" rx="8"/>
+  </g>
+  <rect x="930" y="79" width="90" height="50" rx="8" fill="#b8ef93"/>
+  <g font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+    <text x="855" y="109" fill="#f0f4ef">API</text>
+    <text x="975" y="109" fill="#183017">QUEUE</text>
+    <text x="1095" y="109" fill="#f0f4ef">WORKER</text>
+    <text x="975" y="189" fill="#a4b3ac">STORE</text>
+  </g>
+  <circle cx="916" cy="104" r="2.5" fill="#a4b3ac"/>
+  <circle cx="1036" cy="104" r="2.5" fill="#a4b3ac"/>
+</svg>
