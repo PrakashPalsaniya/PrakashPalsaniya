@@ -14,7 +14,18 @@
 
 I'm Prakash, an IT student at **NIT Srinagar**, graduating in **2027**. I like the parts of an app you don't see: what happens when two people book the same seat, a document takes time to process, or a redirect needs to be fast.
 
-Most of my work is in **backend development and applied AI**. Here are four things I've built.
+Most of my work is in **backend development and applied AI**.
+
+## GitHub activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="./assets/github-activity-dark-mobile.svg">
+  <source media="(max-width: 600px)" srcset="./assets/github-activity-light-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/github-activity-dark.svg">
+  <img src="./assets/github-activity-light.svg" width="100%" alt="GitHub activity: contribution totals, primary languages across public repositories, and a contribution heatmap for the past 90 days. Updated daily.">
+</picture>
+
+[View activity on GitHub &#8599;](https://github.com/PrakashPalsaniya?tab=overview)
 
 ## Selected builds
 
@@ -100,12 +111,6 @@ Redis caches redirects. RabbitMQ sends click events to a separate analytics work
 </picture>
 
 I also work on **DSA in C++** and study system design.
-
-<details>
-  <summary>GitHub activity</summary>
-  <br>
-  <img src="./contributions-badge.svg" width="400" alt="Total GitHub contributions, updated by this repository's workflow">
-</details>
 
 ---
 
