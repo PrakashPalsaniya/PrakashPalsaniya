@@ -1,12 +1,12 @@
-# Profile artwork
+# GitHub profile
 
-The README is built from local SVGs. It needs no external image service, custom
-JavaScript, font download, or rendering service on GitHub. Native links and
-expandable details remain usable alongside the artwork.
+The profile uses native GitHub Markdown: a short introduction, inline activity
+totals, a two-column project table, one expandable architecture section, and
+compact tool lists. GitHub handles typography, themes, and narrow-screen layout.
+The README contains no image banners or SVG references.
 
-- `generate_profile.py` owns the copy, project links, README markup, and static artwork.
-- `profile_svg.py` owns the shared colors, drawing primitives, and SVG animation.
-- `generate_activity.py` collects public GitHub data; `activity_layout.py` draws it.
+- `generate_profile.py` owns the copy, project links, README, and activity summary.
+- `generate_activity.py` collects public GitHub data and regenerates the README.
 - `activity-data.json` is the last successful, dated public snapshot.
 
 From the profile repository root:
@@ -16,23 +16,11 @@ python .github/generate_profile.py
 python .github/generate_activity.py --cached
 ```
 
-Omit `--cached` to refresh data from GitHub. The existing daily GitHub Action
-updates the four activity SVGs and snapshot together. A failed fetch or incomplete
-calendar fails the job and leaves the previous dated cards in place.
-
-Each artwork has dark, light, and mobile variants. `<picture>` selects mobile
-compositions at viewport widths up to 600px. Images have accessible descriptions;
-the SVG animations stop when `prefers-reduced-motion: reduce` is enabled.
-Static frames also work when an image renderer disables animation. The FinMate
-chat is an illustrative interaction, not an actual user record or usage metric.
-
-Desktop canvases use compact proportions: 1200×400 for the header, 1200×260 for
-projects, 1200×280 for activity, 1200×244 for tools, and 1200×168 for contact.
-The README caps every image at 640px with a numeric HTML width attribute. GitHub's
-native max-width rule lets images shrink on narrower screens. On desktop, the
-header is about 213px tall and project cards are about 139px tall, even in GitHub's
-846px README content column. The desktop preview respects the same width cap.
-Mobile compositions are separate.
+Omit `--cached` to refresh data from GitHub. The daily GitHub Action updates the
+README and snapshot together. A failed fetch or incomplete calendar fails the
+job and leaves the published profile unchanged. The contribution totals use the
+snapshot's refresh date for their rolling 365-day and 90-day windows. Languages
+count primary languages across public nonfork repositories.
 
 For a local visual preview, install the optional Python `markdown` package and run:
 
@@ -40,7 +28,6 @@ For a local visual preview, install the optional Python `markdown` package and r
 python .github/preview_profile.py
 ```
 
-Open `.preview/index.html` in a browser. Its Light/Dark controls apply only to the
-preview; GitHub selects its theme through the native picture sources. `.preview/`
-is ignored. This preview approximates GitHub's README layout, rather than its full
-profile page or sanitization pipeline.
+Open `.preview/index.html` in a browser. The Light/Dark controls apply only to the
+preview. `.preview/` is ignored. The preview approximates GitHub's README layout,
+rather than its full profile page or sanitization pipeline.

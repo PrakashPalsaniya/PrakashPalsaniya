@@ -5,9 +5,8 @@ import markdown
 
 ROOT = Path(__file__).resolve().parents[1]
 source = (ROOT / "README.md").read_text(encoding="utf-8")
-source = source.replace('srcset="./assets/', 'srcset="../assets/').replace('src="./assets/', 'src="../assets/')
 source = source.replace("<details>", '<details markdown="1">')
-content = markdown.markdown(source, extensions=["md_in_html"])
+content = markdown.markdown(source, extensions=["md_in_html", "tables"])
 page = '''<!doctype html>
 <html lang="en">
 <head>
@@ -22,8 +21,8 @@ page = '''<!doctype html>
   nav{max-width:896px;margin:28px auto 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 12px;font:12px/1.5 monospace;color:var(--muted)}
   nav strong{color:var(--ink)}.switches{display:flex;gap:6px}button{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:5px;font:inherit;padding:7px 12px;cursor:pointer}button[aria-pressed=true]{border-color:var(--link);color:var(--link)}
   article{max-width:896px;margin:0 auto 56px;padding:24px;border:1px solid var(--line);border-radius:9px}
-  article>p:first-of-type{margin-top:0}picture{display:block}img{display:block;height:auto;max-width:100%}a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:5px}
-  h2{font-size:23px;line-height:1.4;font-weight:600;letter-spacing:-.6px;margin:38px 0 18px;padding-bottom:12px;border-bottom:1px solid var(--line)}p{margin:16px 0}p[align=center]{padding:8px 0 14px;font-size:13px}details{font-size:14px;color:var(--muted)}summary{cursor:pointer;color:var(--ink)}details p{padding:0 16px}article>br{display:block;content:"";margin-bottom:14px}
+  a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:5px}
+  h1{font-size:28px;line-height:1.25;margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}h3{font-size:20px;line-height:1.25;margin:24px 0 16px}p{margin:16px 0;overflow-wrap:break-word}details{font-size:14px}summary{cursor:pointer}li{margin:4px 0}ul{padding-left:24px}table{display:block;max-width:100%;overflow:auto;border-collapse:collapse;margin:16px 0}th,td{border:1px solid var(--line);padding:6px 13px;text-align:left}tr:nth-child(even){background:var(--panel)}sub{font-size:12px;color:var(--muted)}
   @media(max-width:600px){nav{margin-top:16px;font-size:10px;gap:6px}.switches button{padding:6px 9px}article{padding:16px 12px;border:0;margin-bottom:20px}body{font-size:14px}h2{font-size:21px}p[align=center]{font-size:11px;line-height:2}article>p{overflow-wrap:break-word}}
 </style>
 </head>
@@ -31,10 +30,8 @@ page = '''<!doctype html>
 <nav><span><strong>PrakashPalsaniya</strong> / README.md</span><div class="switches"><button type="button" data-mode="light">Light</button><button type="button" data-mode="dark">Dark</button></div></nav>
 <article>''' + content + '''</article>
 <script>
-const sources=[...document.querySelectorAll('source')].map(el=>({el,media:el.media}));
 function choose(theme){
  document.documentElement.dataset.theme=theme;
- sources.forEach(({el,media})=>el.media=media.replace(/\\(prefers-color-scheme: (dark|light)\\)/g,(_,value)=>value===theme?'(min-width: 0px)':'(max-width: 0px)'));
  document.querySelectorAll('button[data-mode]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.mode===theme)));
 }
 document.querySelectorAll('button[data-mode]').forEach(el=>el.addEventListener('click',()=>choose(el.dataset.mode)));

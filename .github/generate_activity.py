@@ -1,4 +1,4 @@
-"""Refresh real public GitHub activity, or restyle the saved snapshot with --cached."""
+"""Refresh public GitHub activity and the native Markdown profile."""
 
 import argparse
 from collections import Counter
@@ -11,7 +11,7 @@ import re
 import time
 from urllib.request import Request, urlopen
 
-from activity_layout import render, validate
+from generate_profile import readme
 
 USERNAME = "PrakashPalsaniya"
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,24 +88,14 @@ def collect():
     return {"updated": today.isoformat(), "days": days, "languages": dict(languages)}
 
 
-def write_cards(data):
-    validate(data)
-    # Build all variants before replacing any published card.
-    cards = {}
-    for dark in [False, True]:
-        for mobile in [False, True]:
-            name = "github-activity" + ("-dark" if dark else "-light") + ("-mobile" if mobile else "") + ".svg"
-            cards[name] = render(data, dark, mobile)
-    for name, content in cards.items():
-        (ROOT / "assets" / name).write_text(content, encoding="utf-8")
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--cached", action="store_true", help="Restyle the saved public snapshot without network access")
+    parser.add_argument("--cached", action="store_true", help="Regenerate the README from the saved snapshot without network access")
     args = parser.parse_args()
     data = json.loads(CACHE.read_text(encoding="utf-8")) if args.cached else collect()
-    write_cards(data)
+    # Validate the complete snapshot and render before updating published files.
+    content = readme(data)
     if not args.cached:
         CACHE.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
-    print(f'Updated four activity cards from the {data["updated"]} GitHub snapshot.')
+    (ROOT / "README.md").write_text(content, encoding="utf-8")
+    print(f'Updated profile activity from the {data["updated"]} GitHub snapshot.')

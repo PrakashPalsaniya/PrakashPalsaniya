@@ -21,16 +21,16 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Refresh activity cards
+      - name: Refresh profile activity
         env:
           GH_TOKEN: ${{ github.token }}
         run: python .github/generate_activity.py
 
-      - name: Publish updated cards
+      - name: Publish updated profile
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/github-activity*.svg .github/activity-data.json
+          git add README.md .github/activity-data.json
           if ! git diff --staged --quiet; then
             git commit -m "Update GitHub activity"
             git pull --rebase origin main
