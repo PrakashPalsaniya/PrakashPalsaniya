@@ -1,9 +1,14 @@
 # GitHub profile
 
-The profile uses native GitHub Markdown: a short introduction, inline activity
-totals, a two-column project table, one expandable architecture section, and
-compact tool lists. GitHub handles typography, themes, and narrow-screen layout.
-The README contains no image banners or SVG references.
+The profile uses GitHub-supported HTML: normal divs for the introduction and
+contact, a compact activity table, a two-by-two project grid, one expandable
+architecture section, and a two-by-two toolbox. Text, links, and flow descriptions
+replace the SVG artwork. The README contains no image banners or SVG references.
+
+GitHub strips custom CSS from READMEs. Layout uses supported table, width,
+alignment, and vertical-alignment attributes; GitHub supplies typography, colors,
+borders, themes, and narrow-screen handling. The local HTML/CSS preview emulates
+those native styles; custom CSS is not embedded in the published README.
 
 - `generate_profile.py` owns the copy, project links, README, and activity summary.
 - `generate_activity.py` collects public GitHub data and regenerates the README.

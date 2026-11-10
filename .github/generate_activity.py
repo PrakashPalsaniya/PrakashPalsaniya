@@ -1,4 +1,4 @@
-"""Refresh public GitHub activity and the native Markdown profile."""
+"""Refresh public GitHub activity and the native HTML profile."""
 
 import argparse
 from collections import Counter
