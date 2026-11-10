@@ -26,6 +26,11 @@ the SVG animations stop when `prefers-reduced-motion: reduce` is enabled.
 Static frames also work when an image renderer disables animation. The FinMate
 chat is an illustrative interaction, not an actual user record or usage metric.
 
+Desktop canvases use compact proportions: 1200×400 for the header, 1200×260 for
+projects, 1200×280 for activity, 1200×244 for tools, and 1200×168 for contact.
+At GitHub's 846px README content width, project cards are about 183px tall.
+The desktop preview uses the same content width. Mobile compositions are separate.
+
 For a local visual preview, install the optional Python `markdown` package and run:
 
 ```sh

@@ -64,7 +64,7 @@ def core(p):
 
 def header(dark, mobile):
     p = palette(dark)
-    w, h = (640, 884) if mobile else (1200, 578)
+    w, h = (640, 884) if mobile else (1200, 400)
     b = frame(w, h, p)
     b += box(32 if mobile else 42, 32, 38, 30, p["solid"], 5)
     b += text(51 if mobile else 61, 53, "pp", 18, "#233014", 700, True, 'text-anchor="middle"')
@@ -73,16 +73,20 @@ def header(dark, mobile):
         b += circle(972, 47, 4, p["accent"], extra='class="breathe"')
         b += label(985, 52, "OPEN TO OPPORTUNITIES", p, size=10)
     b += line(32 if mobile else 42, 83, w - (32 if mobile else 42), 83, p["line"])
-    b += label(34 if mobile else 44, 127, "BACKEND DEVELOPMENT  /  APPLIED AI", p, p["accent"], size=17 if mobile else 12)
+    b += label(34 if mobile else 44, 127 if mobile else 116, "BACKEND DEVELOPMENT  /  APPLIED AI", p, p["accent"], size=17 if mobile else 12)
     x = 30 if mobile else 38
-    b += text(x, 229 if mobile else 242, "Prakash", 101 if mobile else 112, p["ink"], 700, extra='letter-spacing="-6"')
-    b += text(x, 323 if mobile else 347, "Palsaniya", 101 if mobile else 112, p["ink"], 700, extra='letter-spacing="-6"')
-    b += circle(452 if mobile else 506, 313 if mobile else 337, 8, p["accent"])
-    b += text(36 if mobile else 44, 374 if mobile else 401, "I build what happens", 27 if mobile else 28, p["muted"])
-    b += text(36 if mobile else 44, 410 if mobile else 438, "behind the screen.", 27 if mobile else 28, p["ink"], 600)
-    b += group(core(p), 75 if mobile else 682, 434 if mobile else 100, .98 if mobile else 1)
+    name_spacing = -6 if mobile else -4
+    b += text(x, 229 if mobile else 192, "Prakash", 101 if mobile else 82, p["ink"], 700, extra=f'letter-spacing="{name_spacing}"')
+    b += text(x, 323 if mobile else 267, "Palsaniya", 101 if mobile else 82, p["ink"], 700, extra=f'letter-spacing="{name_spacing}"')
+    b += circle(452 if mobile else 389, 313 if mobile else 260, 8 if mobile else 6, p["accent"])
+    if mobile:
+        b += text(36, 374, "I build what happens", 27, p["muted"])
+        b += text(36, 410, "behind the screen.", 27, p["ink"], 600)
+    else:
+        b += text(44, 310, "I build what happens behind the screen.", 24, p["muted"])
+    b += group(core(p), 75 if mobile else 750, 434 if mobile else 90, .98 if mobile else .59)
     if not mobile:
-        b += line(652, 118, 652, 475, p["line"])
+        b += line(652, 108, 652, 314, p["line"])
     fy = h - 60
     b += line(32 if mobile else 42, fy, w - (32 if mobile else 42), fy, p["line"])
     b += circle(40 if mobile else 48, fy + 30, 4, p["accent"])
@@ -91,10 +95,11 @@ def header(dark, mobile):
     return svg(w, h, "Prakash Palsaniya — Behind the screen", "Backend development and applied AI. I build what happens behind the screen. IT student at NIT Srinagar, class of 2027. Open to opportunities. Animated illustration of requests flowing through a layered server.", b, True)
 
 
-def diagram(slug, p, accent):
+def diagram(slug, p, accent, captions=True):
     b = grid(p, 470, 286)
     if slug == "documind":
-        b += label(20, 28, "01 / RETRIEVAL PIPELINE", p, size=10)
+        if captions:
+            b += label(20, 28, "01 / RETRIEVAL PIPELINE", p, size=10)
         for dx, dy in [(0, 0), (8, -8), (16, -16)]:
             b += box(18 + dx, 83 + dy, 91, 138, p["bg"], 6, p["line"])
         b += box(47, 83, 35, 20, accent, 3)
@@ -111,9 +116,11 @@ def diagram(slug, p, accent):
         b += box(337, 109, 113, 68, p["raised"], 8, accent)
         b += text(393, 139, "RERANK", 13, p["ink"], 700, True, 'text-anchor="middle"')
         b += text(393, 159, "+ cite", 12, accent, mono=True, extra='text-anchor="middle"')
-        b += label(22, 264, "CONTEXT IN. SOURCES OUT.", p, accent, size=11)
+        if captions:
+            b += label(22, 264, "CONTEXT IN. SOURCES OUT.", p, accent, size=11)
     elif slug == "screenly":
-        b += label(20, 28, "02 / THE CONCURRENCY PROBLEM", p, size=10)
+        if captions:
+            b += label(20, 28, "02 / THE CONCURRENCY PROBLEM", p, size=10)
         b += path("M28 67Q133 42 238 67", p["line"], 3)
         b += label(93, 54, "SCREEN", p, size=9)
         for row in range(4):
@@ -133,9 +140,11 @@ def diagram(slug, p, accent):
         b += wire("M367 139V165", p, accent)
         b += box(287, 165, 160, 51, p["bg"], 8, p["line"])
         b += text(367, 195, "BOOK → CONFIRM", 12, p["ink"], 700, True, 'text-anchor="middle"')
-        b += label(22, 264, "HOLD FIRST. CONFIRM ONCE.", p, accent, size=11)
+        if captions:
+            b += label(22, 264, "HOLD FIRST. CONFIRM ONCE.", p, accent, size=11)
     elif slug == "finmate":
-        b += label(20, 28, "03 / SPENDING, IN CONVERSATION", p, size=10)
+        if captions:
+            b += label(20, 28, "03 / SPENDING, IN CONVERSATION", p, size=10)
         b += box(27, 60, 279, 47, p["bg"], 12, p["line"])
         b += text(44, 89, "Add lunch, ₹180", 17, p["ink"])
         b += circle(287, 84, 7, accent)
@@ -146,9 +155,11 @@ def diagram(slug, p, accent):
         for index, height in enumerate([10, 17, 12, 23, 17, 28, 20]):
             b += box(299 + index * 17, 203 - height, 10, height, accent, 2, extra=f'opacity="{.4 + index * .09}"')
         b += label(110, 201, "ILLUSTRATIVE CHAT", p, size=9)
-        b += label(22, 264, "CHAT → TRACK → UNDERSTAND", p, accent, size=11)
+        if captions:
+            b += label(22, 264, "CHAT → TRACK → UNDERSTAND", p, accent, size=11)
     else:
-        b += label(20, 28, "04 / TWO PATHS. ONE CLICK.", p, size=10)
+        if captions:
+            b += label(20, 28, "04 / TWO PATHS. ONE CLICK.", p, size=10)
         b += box(21, 66, 132, 58, p["bg"], 9, p["line"])
         b += text(87, 101, "/your-link", 15, p["ink"], 700, True, 'text-anchor="middle"')
         b += wire("M153 95H201", p, accent, -1)
@@ -164,38 +175,43 @@ def diagram(slug, p, accent):
             b += box(230 + i * 13, 185, 8, 14, accent, 2, extra=f'opacity="{1 - i * .25}"')
         b += text(283, 188, "CLICK EVENT", 11, accent, 700, True)
         b += text(283, 206, "→ analytics worker", 11, p["muted"], mono=True)
-        b += label(22, 264, "REDIRECT NOW. ANALYZE ASYNC.", p, accent, size=11)
+        if captions:
+            b += label(22, 264, "REDIRECT NOW. ANALYZE ASYNC.", p, accent, size=11)
     return b
 
 
 def project_card(project, index, dark, mobile):
     p = palette(dark)
     accent = project["accent"][int(dark)]
-    w, h = (640, 742) if mobile else (1200, 390)
+    w, h = (640, 742) if mobile else (1200, 260)
     x = 32 if mobile else 42
     b = frame(w, h, p)
     b += box(x, 32, 37, 27, accent, 4)
     b += text(x + 18.5, 51, f"0{index + 1}", 12, p["bg"], 700, True, 'text-anchor="middle"')
     b += label(x + 50, 51, project["category"], p, accent, size=16 if mobile else 12)
     b += arrow(w - x - 23, 35, accent, 18)
-    b += text(x, 104, project["name"], 26 if mobile else 23, p["ink"], 700)
-    for row, value in enumerate(project["headline"]):
-        b += text(x - 2, 171 + row * 59, value, 59, p["ink"] if row == 0 else accent, 700, extra='letter-spacing="-2.5"')
-    b += text(x, 272, project["description"], 23 if mobile else 19, p["muted"])
-    b += tags(x, 303 if mobile else 322, project["tags"], p, size=18 if mobile else 12)
+    b += text(x, 104 if mobile else 96, project["name"], 26 if mobile else 23, p["ink"], 700)
+    if mobile:
+        for row, value in enumerate(project["headline"]):
+            b += text(x - 2, 171 + row * 59, value, 59, p["ink"] if row == 0 else accent, 700, extra='letter-spacing="-2.5"')
+    else:
+        b += text(x - 2, 148, " ".join(project["headline"]), 40, accent, 700, extra='letter-spacing="-1.5"')
+    b += text(x, 272 if mobile else 184, project["description"], 23 if mobile else 19, p["muted"])
+    b += tags(x, 303 if mobile else 208, project["tags"], p, size=18 if mobile else 12)
     if mobile:
         b += line(32, 360, 608, 360, p["line"])
         art = re.sub(r'font-size="(\d+)"', lambda m: f'font-size="{round(int(m[1]) * 1.2, 1)}"', diagram(project["slug"], p, accent))
         b += group(art, 38, 384, 1.2)
     else:
-        b += line(650, 83, 650, 346, p["line"])
-        b += group(diagram(project["slug"], p, accent), 685, 83)
+        b += line(650, 76, 650, 232, p["line"])
+        # Keep diagram labels at their original size; trim decorative top/bottom captions.
+        b += '<svg x="685" y="64" width="470" height="176" viewBox="0 49 470 176">' + diagram(project["slug"], p, accent, captions=False) + '</svg>'
     return svg(w, h, project["name"], f'{project["name"]}: {" ".join(project["headline"])} {project["description"]} {project["flow"]}. Stack: {", ".join(project["tags"])}.', b, True)
 
 
 def toolbox(dark, mobile):
     p = palette(dark)
-    w, h = (640, 744) if mobile else (1200, 340)
+    w, h = (640, 744) if mobile else (1200, 244)
     b = frame(w, h, p)
     b += label(32 if mobile else 42, 44, "THE TOOLBOX / CHOSEN FOR THE JOB", p, p["accent"], size=16 if mobile else 12)
     rows = [
@@ -207,11 +223,11 @@ def toolbox(dark, mobile):
     for index, (number, title, values) in enumerate(rows):
         x, y = (32, 92 + index * 144) if mobile else (42 + index * 285, 94)
         if not mobile and index:
-            b += line(x - 24, 93, x - 24, 253, p["line"])
+            b += line(x - 24, 82, x - 24, 166, p["line"])
         b += label(x, y, number, p, p["accent"], size=16 if mobile else 12)
-        b += text(x, y + 36, title, 26 if mobile else 23, p["ink"], 700, extra='letter-spacing="-.7"')
+        b += text(x, y + (36 if mobile else 28), title, 26 if mobile else 23, p["ink"], 700, extra='letter-spacing="-.7"')
         for row, value in enumerate(values):
-            b += text(x, y + 71 + row * 26, value, 22 if mobile else 16, p["muted"])
+            b += text(x, y + (71 if mobile else 53) + row * (26 if mobile else 23), value, 22 if mobile else 16, p["muted"])
         if mobile and index < 3:
             b += line(32, y + 120, 608, y + 120, p["line"])
     b += line(32 if mobile else 42, h - 58, w - (32 if mobile else 42), h - 58, p["line"])
@@ -222,19 +238,19 @@ def toolbox(dark, mobile):
 
 def contact(dark, mobile):
     p = palette(dark)
-    w, h = (640, 336) if mobile else (1200, 230)
+    w, h = (640, 336) if mobile else (1200, 168)
     b = box(1, 1, w - 2, h - 2, p["solid"], 16)
     ink = "#243413"
     b += label(32 if mobile else 42, 42, "GOT AN INTERESTING PROBLEM?", p, ink, size=17 if mobile else 12)
-    b += text(30 if mobile else 40, 110, "Let's build", 66 if mobile else 64, ink, 700, extra='letter-spacing="-3"')
     if mobile:
+        b += text(30, 110, "Let's build", 66, ink, 700, extra='letter-spacing="-3"')
         b += text(30, 178, "something good.", 66, ink, 700, extra='letter-spacing="-3"')
     else:
-        b += text(345, 110, "something good.", 64, ink, 700, extra='letter-spacing="-3"')
-    b += arrow(w - (73 if mobile else 110), 40 if mobile else 84, ink, 31 if mobile else 46)
-    b += line(32 if mobile else 42, h - 87, w - (32 if mobile else 42), h - 87, "#91bb49")
-    b += text(32 if mobile else 42, h - 50, "Backend + applied AI opportunities", 22 if mobile else 18, ink)
-    b += text(32 if mobile else w - 42, h - 22 if mobile else h - 50, "prakash8290682001@gmail.com", 18 if mobile else 14, ink, mono=True, extra='' if mobile else 'text-anchor="end"')
+        b += text(40, 96, "Let's build something good.", 46, ink, 700, extra='letter-spacing="-1.5"')
+    b += arrow(w - (73 if mobile else 92), 40 if mobile else 58, ink, 31 if mobile else 32)
+    b += line(32 if mobile else 42, h - (87 if mobile else 52), w - (32 if mobile else 42), h - (87 if mobile else 52), "#91bb49")
+    b += text(32 if mobile else 42, h - (50 if mobile else 22), "Backend + applied AI opportunities", 22 if mobile else 18, ink)
+    b += text(32 if mobile else w - 42, h - 22, "prakash8290682001@gmail.com", 18 if mobile else 14, ink, mono=True, extra='' if mobile else 'text-anchor="end"')
     return svg(w, h, "Let's build something good", "Open to backend and applied AI opportunities. Email Prakash at prakash8290682001@gmail.com.", b)
 
 
