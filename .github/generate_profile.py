@@ -7,6 +7,7 @@ from profile_svg import arrow, badge, box, circle, frame, grid, group, label, li
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
+PROFILE_IMAGE_WIDTH = 640
 
 PROJECTS = [
     dict(slug="documind", name="DocuMind", category="DOCUMENT INTELLIGENCE", accent=("#ad4623", "#ffa77c"),
@@ -260,7 +261,7 @@ def picture(slug, alt):
   <source media="(max-width: 600px)" srcset="./assets/{slug}-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/{slug}-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/{slug}-light.svg">
-  <img src="./assets/{slug}-light.svg" width="100%" alt="{alt}">
+  <img src="./assets/{slug}-light.svg" width="{PROFILE_IMAGE_WIDTH}" alt="{alt}">
 </picture>'''
 
 

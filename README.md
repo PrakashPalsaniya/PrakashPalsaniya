@@ -5,7 +5,7 @@
   <source media="(max-width: 600px)" srcset="./assets/profile-header-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-header-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg">
-  <img src="./assets/profile-header-light.svg" width="100%" alt="Prakash Palsaniya. I build what happens behind the screen. Backend and applied AI. NIT Srinagar, IT, 2027.">
+  <img src="./assets/profile-header-light.svg" width="640" alt="Prakash Palsaniya. I build what happens behind the screen. Backend and applied AI. NIT Srinagar, IT, 2027.">
 </picture>
 
 <p align="center">
@@ -26,7 +26,7 @@ That's where I spend my time: **backend development and applied AI**. These are 
   <source media="(max-width: 600px)" srcset="./assets/github-activity-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/github-activity-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/github-activity-light.svg">
-  <img src="./assets/github-activity-light.svg" width="100%" alt="GitHub activity: contributions since November 2023, past-year totals, primary languages by public repository, and a 90-day contribution heatmap. Each card shows its last refresh date.">
+  <img src="./assets/github-activity-light.svg" width="640" alt="GitHub activity: contributions since November 2023, past-year totals, primary languages by public repository, and a 90-day contribution heatmap. Each card shows its last refresh date.">
 </picture>
 
 [Explore my GitHub activity ↗](https://github.com/PrakashPalsaniya?tab=overview) · Refreshed daily with GitHub Actions.
@@ -41,7 +41,7 @@ Four different products. Plenty of interesting problems under the hood.
   <source media="(max-width: 600px)" srcset="./assets/documind-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/documind-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/documind-light.svg">
-  <img src="./assets/documind-light.svg" width="100%" alt="DocuMind. Your PDFs. With answers. Ask questions. Follow the sources.">
+  <img src="./assets/documind-light.svg" width="640" alt="DocuMind. Your PDFs. With answers. Ask questions. Follow the sources.">
 </picture>
 </a>
 
@@ -66,7 +66,7 @@ PDF → background worker → hybrid retrieval → reranking → answer + source
   <source media="(max-width: 600px)" srcset="./assets/screenly-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/screenly-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/screenly-light.svg">
-  <img src="./assets/screenly-light.svg" width="100%" alt="Screenly. One seat. One booking. Built for the race to checkout.">
+  <img src="./assets/screenly-light.svg" width="640" alt="Screenly. One seat. One booking. Built for the race to checkout.">
 </picture>
 </a>
 
@@ -91,7 +91,7 @@ Select seat → Redis hold → payment → booking transaction → queued email
   <source media="(max-width: 600px)" srcset="./assets/finmate-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/finmate-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/finmate-light.svg">
-  <img src="./assets/finmate-light.svg" width="100%" alt="FinMate. Less logging. More living. Track spending, one conversation at a time.">
+  <img src="./assets/finmate-light.svg" width="640" alt="FinMate. Less logging. More living. Track spending, one conversation at a time.">
 </picture>
 </a>
 
@@ -116,7 +116,7 @@ Chat or Telegram → expense entry → reports → assistant + Excel export
   <source media="(max-width: 600px)" srcset="./assets/pklinks-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/pklinks-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/pklinks-light.svg">
-  <img src="./assets/pklinks-light.svg" width="100%" alt="PKLinks. Short links. Long story. A short URL with a lot under the hood.">
+  <img src="./assets/pklinks-light.svg" width="640" alt="PKLinks. Short links. Long story. A short URL with a lot under the hood.">
 </picture>
 </a>
 
@@ -142,7 +142,7 @@ Short link → cached redirect → destination · click event → analytics work
   <source media="(max-width: 600px)" srcset="./assets/toolbox-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/toolbox-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/toolbox-light.svg">
-  <img src="./assets/toolbox-light.svg" width="100%" alt="Node.js, Express, Python, Socket.IO; PostgreSQL, MongoDB, Redis, RabbitMQ, BullMQ; LangChain, LangGraph, Qdrant; React, Tailwind, Docker, AWS. Also DSA in C++ and system design.">
+  <img src="./assets/toolbox-light.svg" width="640" alt="Node.js, Express, Python, Socket.IO; PostgreSQL, MongoDB, Redis, RabbitMQ, BullMQ; LangChain, LangGraph, Qdrant; React, Tailwind, Docker, AWS. Also DSA in C++ and system design.">
 </picture>
 
 <br>
@@ -153,6 +153,6 @@ Short link → cached redirect → destination · click event → analytics work
   <source media="(max-width: 600px)" srcset="./assets/contact-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/contact-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/contact-light.svg">
-  <img src="./assets/contact-light.svg" width="100%" alt="Got an interesting problem? Let's build something good. Open to backend and applied AI opportunities. Email prakash8290682001@gmail.com.">
+  <img src="./assets/contact-light.svg" width="640" alt="Got an interesting problem? Let's build something good. Open to backend and applied AI opportunities. Email prakash8290682001@gmail.com.">
 </picture>
 </a>
