@@ -1,4 +1,4 @@
-"""Refresh public GitHub activity and the native HTML profile."""
+"""Refresh public GitHub activity, gradient cards, and the profile README."""
 
 import argparse
 from collections import Counter
@@ -12,6 +12,7 @@ import time
 from urllib.request import Request, urlopen
 
 from generate_profile import readme
+from profile_cards import write_cards
 
 USERNAME = "PrakashPalsaniya"
 ROOT = Path(__file__).resolve().parents[1]
@@ -95,6 +96,7 @@ if __name__ == "__main__":
     data = json.loads(CACHE.read_text(encoding="utf-8")) if args.cached else collect()
     # Validate the complete snapshot and render before updating published files.
     content = readme(data)
+    write_cards(data)
     if not args.cached:
         CACHE.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
     (ROOT / "README.md").write_text(content, encoding="utf-8")
