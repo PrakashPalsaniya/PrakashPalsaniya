@@ -7,8 +7,12 @@ in the published README. Introduction text, links, project grids, architecture,
 toolbox, and language details use native GitHub HTML.
 
 Badges preserve the navy/purple header gradient and cyan, violet, and amber
-contribution colors. Pillow renders Sora, Public Sans, and IBM Plex Mono from
-bundled fonts at twice the display resolution. Light and dark variants are
+contribution colors. Pillow renders bundled Public Sans at twice the display
+resolution: weight 600 for the title and numbers, 500 for metric labels, and
+400 for supporting text. Badge words have 1.2px of extra spacing (1.8px in the title).
+Native section headings use `h3`, project and tool subheadings are bold, and
+breakable third-em spaces give headings and project text a slightly wider word
+gap. Light and dark variants are
 selected with `picture` elements. Explicit display widths keep images compact,
 and the title keeps its aspect ratio as it shrinks on narrow screens. Alt text preserves each badge's
 content. These are generated graphics, with no screenshots or external services.

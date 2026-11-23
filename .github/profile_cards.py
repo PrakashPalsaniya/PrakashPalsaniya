@@ -14,8 +14,9 @@ SCALE = 2
 
 @lru_cache(maxsize=12)
 def font(family, size):
-    filename = {"Sora": "sora-700-normal.woff2", "Public Sans": "public-sans-400-normal.woff2",
-                "IBM Plex Mono": "ibm-plex-mono-400-normal.woff2"}[family]
+    filename = {"Public Sans": "public-sans-400-normal.woff2",
+                "Public Sans Medium": "public-sans-500-normal.woff2",
+                "Public Sans Bold": "public-sans-600-normal.woff2"}[family]
     face = TTFont(ROOT / ".github" / "fonts" / filename)
     face.flavor = None
     buffer = BytesIO()
@@ -41,9 +42,20 @@ def background(width, height, start, end, border, radius):
     return image
 
 
-def label(image, position, value, family, size, color, anchor="la"):
-    ImageDraw.Draw(image).text(tuple(n * SCALE for n in position), value,
-                              font=font(family, size), fill=color, anchor=anchor)
+def label(image, position, value, family, size, color, anchor="la", word_spacing=1.2):
+    face = font(family, size)
+    words = value.split(" ")
+    gap = face.getlength(" ") + word_spacing * SCALE
+    width = sum(face.getlength(word) for word in words) + gap * (len(words) - 1)
+    x, y = (n * SCALE for n in position)
+    if anchor[0] == "r":
+        x -= width
+    elif anchor[0] == "m":
+        x -= width / 2
+    draw = ImageDraw.Draw(image)
+    for word in words:
+        draw.text((x, y), word, font=face, fill=color, anchor="l" + anchor[1])
+        x += face.getlength(word) + gap
 
 
 def png(image):
@@ -55,7 +67,8 @@ def png(image):
 def header(dark):
     image = background(320, 64, "#14243d" if dark else "#e2f3ff", "#322444" if dark else "#ede4ff",
                        "#41516a" if dark else "#cbd8ee", 10)
-    label(image, (14, 6), "Prakash Palsaniya", "Sora", 24, "#f1f5ff" if dark else "#18294b")
+    label(image, (14, 6), "Prakash Palsaniya", "Public Sans Bold", 24,
+          "#f1f5ff" if dark else "#18294b", word_spacing=1.8)
     label(image, (15, 39), "Backend development · Applied AI", "Public Sans", 12,
           "#c7c9f1" if dark else "#555487")
     return png(image)
@@ -69,12 +82,12 @@ def activity_badge(caption, count, dark, index):
     ]
     start, end, accent = colors[index]
     image = background(128, 36, start, end, "#41516a" if dark else "#cbd8ee", 7)
-    label(image, (10, 18), caption, "IBM Plex Mono", 10, accent, "lm")
+    label(image, (10, 18), caption, "Public Sans Medium", 11, accent, "lm")
     size = 18
     value = f"{count:,}"
-    while font("Sora", size).getlength(value) > 50 * SCALE and size > 9:
+    while font("Public Sans Bold", size).getlength(value) > 50 * SCALE and size > 9:
         size -= 1
-    label(image, (118, 18), value, "Sora", size, accent, "rm")
+    label(image, (118, 18), value, "Public Sans Bold", size, accent, "rm")
     return png(image)
 
 
