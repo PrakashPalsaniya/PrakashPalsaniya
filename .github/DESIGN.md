@@ -1,9 +1,10 @@
 # GitHub profile
 
-The profile uses GitHub-supported HTML: normal divs for the introduction and
-contact, a compact activity table, a two-by-two project grid, one expandable
-architecture section, and a two-by-two toolbox. Text, links, and flow descriptions
-replace the SVG artwork. The README contains no image banners or SVG references.
+The profile uses GitHub-supported HTML: a full-width bordered header with role
+labels and contact links, a contribution panel with three number cards, a
+two-by-two project grid, one expandable architecture section, a two-by-two
+toolbox, and a text contact section. The README contains no screenshots, image
+banners, or SVG references.
 
 GitHub strips custom CSS from READMEs. Layout uses supported table, width,
 alignment, and vertical-alignment attributes; GitHub supplies typography, colors,
