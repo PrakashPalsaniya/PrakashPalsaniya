@@ -6,6 +6,7 @@ import markdown
 ROOT = Path(__file__).resolve().parents[1]
 source = (ROOT / "README.md").read_text(encoding="utf-8")
 source = source.replace("./assets/", "../assets/")
+source = source.replace("https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/", "../assets/")
 source = source.replace("<details>", '<details markdown="1">')
 content = markdown.markdown(source, extensions=["md_in_html", "tables"])
 page = '''<!doctype html>

@@ -16,6 +16,7 @@ gap. Light and dark variants are
 selected with `picture` elements. Explicit display widths keep images compact,
 and the title keeps its aspect ratio as it shrinks on narrow screens. Alt text preserves each badge's
 content. These are generated graphics, with no screenshots or external services.
+Direct GitHub asset URLs preserve the typography version query when image caches refresh.
 
 The preview uses local assets and approximates GitHub's surrounding styles.
 

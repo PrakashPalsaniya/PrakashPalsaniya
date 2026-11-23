@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".github" / "activity-data.json"
 ASSET_VERSION = "typography-2"
+ASSET_BASE = "https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets"
 
 
 def spaced(value):
@@ -22,8 +23,8 @@ def heading(value):
 def picture(name, alt, width, height=None):
     height_attribute = f' height="{height}"' if height is not None else ""
     return f'''<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/{name}-dark.png?v={ASSET_VERSION}">
-  <img src="./assets/{name}-light.png?v={ASSET_VERSION}" width="{width}"{height_attribute} alt="{escape(alt, quote=True)}">
+  <source media="(prefers-color-scheme: dark)" srcset="{ASSET_BASE}/{name}-dark.png?v={ASSET_VERSION}">
+  <img src="{ASSET_BASE}/{name}-light.png?v={ASSET_VERSION}" width="{width}"{height_attribute} alt="{escape(alt, quote=True)}">
 </picture>'''
 
 PROJECTS = [
