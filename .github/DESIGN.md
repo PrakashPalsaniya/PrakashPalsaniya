@@ -1,24 +1,23 @@
 # GitHub profile
 
-The header and contribution panel use compact, generated SVG cards. The header
-has a navy/purple gradient; contribution cards use cyan, violet, and amber.
-Light and dark themes each have a desktop and mobile layout, selected with
-GitHub-supported `picture` elements. These are vector UI cards, with no screenshots.
+The README uses a small PNG title badge displayed at 320 × 64 pixels and three
+contribution badges displayed at 128 × 36 pixels. Badges wrap naturally on narrow
+screens. There are no large panels, separate mobile card layouts, or SVG references
+in the published README. Introduction text, links, project grids, architecture,
+toolbox, and language details use native GitHub HTML.
 
-GitHub strips custom CSS from README HTML, so card typography and gradients live
-inside the SVGs. Sora headings and numbers, Public Sans supporting text, and IBM
-Plex Mono labels are converted to vector paths using bundled fonts. The SVGs
-contain no scripts, external images, or font requests. Titles, descriptions,
-and README alt text preserve the card content for accessibility.
+Badges preserve the navy/purple header gradient and cyan, violet, and amber
+contribution colors. Pillow renders Sora, Public Sans, and IBM Plex Mono from
+bundled fonts at twice the display resolution. Light and dark variants are
+selected with `picture` elements. Explicit display widths keep images compact,
+and the title keeps its aspect ratio as it shrinks on narrow screens. Alt text preserves each badge's
+content. These are generated graphics, with no screenshots or external services.
 
-Contact links, the two-by-two project grid, the expandable architecture section,
-the toolbox, and language details remain native HTML. The preview uses local
-assets and approximates GitHub's surrounding styles.
+The preview uses local assets and approximates GitHub's surrounding styles.
 
 - `generate_profile.py` owns the copy, project links, README, and activity summary.
-- `profile_cards.py` renders the eight themed card variants.
-- `svg_typography.py` outlines the bundled fonts in `fonts/`, alongside their OFL licenses.
-- `generate_activity.py` collects public GitHub data and regenerates the cards and README.
+- `profile_cards.py` renders the eight small PNG badge variants using bundled fonts and OFL licenses in `fonts/`.
+- `generate_activity.py` collects public GitHub data and regenerates the badges and README.
 - `activity-data.json` is the last successful, dated public snapshot.
 
 From the profile repository root:
@@ -30,8 +29,8 @@ python .github/generate_activity.py --cached
 ```
 
 Omit `--cached` to refresh data from GitHub. The daily GitHub Action updates the
-README, cards, and snapshot together. A failed fetch or incomplete calendar fails
-the job and leaves the published profile unchanged. Every card variant is rendered
+README, badges, and snapshot together. A failed fetch or incomplete calendar fails
+the job and leaves the published profile unchanged. Every badge variant is rendered
 before any assets are written. The contribution totals use the
 snapshot's refresh date for their rolling 365-day and 90-day windows. Languages
 count primary languages across public nonfork repositories.

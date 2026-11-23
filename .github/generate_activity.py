@@ -1,4 +1,4 @@
-"""Refresh public GitHub activity, gradient cards, and the profile README."""
+"""Refresh public GitHub activity, compact PNG badges, and the profile README."""
 
 import argparse
 from collections import Counter
