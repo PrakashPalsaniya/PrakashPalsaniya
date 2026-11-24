@@ -20,20 +20,20 @@ I build APIs, document search pipelines, background workers, and
 <p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-total-dark.png?v=typography-2">
-  <img src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-total-light.png?v=typography-2" width="128" height="36" alt="626 contributions since Nov 2023">
+  <img src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-total-light.png?v=typography-2" width="128" height="36" alt="632 contributions since Nov 2023">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-year-dark.png?v=typography-2">
-  <img src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-year-light.png?v=typography-2" width="128" height="36" alt="415 contributions in the past 365 days">
+  <img src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-year-light.png?v=typography-2" width="128" height="36" alt="421 contributions in the past 365 days">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-recent-dark.png?v=typography-2">
-  <img src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-recent-light.png?v=typography-2" width="128" height="36" alt="39 contributions in the past 90 days">
+  <img src="https://raw.githubusercontent.com/PrakashPalsaniya/PrakashPalsaniya/main/assets/contributions-recent-light.png?v=typography-2" width="128" height="36" alt="45 contributions in the past 90 days">
 </picture>
 </p>
-<p><sub>Contributions since Nov 2023 · Updated 23 Nov 2026 ·
+<p><sub>Contributions since Nov 2023 · Updated 24 Nov 2026 ·
 <a href="https://github.com/PrakashPalsaniya?tab=overview">View activity ↗</a><br>
-Primary languages by public repository: JavaScript (10), C++ (3), Python (2), C (1). Forks excluded.</sub></p>
+Primary languages by public repository: JavaScript (9), C++ (3), Python (2), C (1). Forks excluded.</sub></p>
 
 <h3>Selected builds</h3>
 
